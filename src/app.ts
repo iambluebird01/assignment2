@@ -3,6 +3,7 @@ import morgan from 'morgan'
 
 //Routes
 import IndexRoutes from './routes/index.routes'
+import PostRoutes from './routes/post.routes'
 
 export class App {
 
@@ -25,6 +26,7 @@ export class App {
 
     routes() {
         this.app.use(IndexRoutes);
+        this.app.use('/posts', PostRoutes);
     }
 
     async listen() {
